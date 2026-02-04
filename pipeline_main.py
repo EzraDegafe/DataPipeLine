@@ -1,7 +1,7 @@
 #imports
 import pandas as pd
-from src.extract_module import DataExtractor
-from src.transform_module import DataTransformer
+from src.extract.extract_module import DataExtractor
+from src.transform.transform_module import DataTransformer
 
 #extract
 extractor = DataExtractor()

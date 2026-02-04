@@ -1,6 +1,7 @@
 #imports
+import time
 import pandas as pd
-from src.extract_module import DataExtractor
+from src.extract.extract_module import DataExtractor
 
 
 #extract
@@ -28,6 +29,11 @@ for year in multi_year_data:
 #     else:
 #         break
 
-stream_two = extractor.stream_data("https://raw.githubusercontent.com/ryurko/nflscrapR-data/refs/heads/master/play_by_play_data/regular_season/reg_pbp_2009.csv")
-print(stream_two['play_type'].head(5))
+file_path = "https://raw.githubusercontent.com/ryurko/nflscrapR-data/refs/heads/master/play_by_play_data/regular_season/reg_pbp_2009.csv"
+cols = ['play_type', 'yards_gained', 'rush_attempt', 'pass_attempt', 'touchdown', 'pass_touchdown', 'rush_touchdown']
+data = extractor.extract_from_csv_by_cols(file_path, cols)
+
+
+print(data.head(5))
+
 #end example

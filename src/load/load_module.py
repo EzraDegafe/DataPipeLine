@@ -1,6 +1,6 @@
 import pandas as pd
-from sql_queries_module import sql_insert, sql_update
-from DBConnection_Module import DbConnector
+from src.load.sql_queries_module import sql_insert, sql_update
+from src.load.DBConnection_Module import DbConnector
 
 
 class DataLoader:
